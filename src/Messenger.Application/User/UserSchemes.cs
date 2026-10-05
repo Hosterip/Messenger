@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Messenger.Application.User;
 
-internal static class UserGraphQL
+internal static class UserSchemes
 {
-    internal static IRequestExecutorBuilder AddUserGraphQL(this IRequestExecutorBuilder services)
+    internal static IRequestExecutorBuilder AddUserScheme(this IRequestExecutorBuilder services)
     {
         services
             .AddQueryType()
