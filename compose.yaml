@@ -1,7 +1,44 @@
-﻿services:
+﻿networks:
+  shared: 
+    name: shared
+  internal:
+    name: internal
+    internal: true
+    driver: bridge
+    
+services:
   messenger.api:
+    container_name: messenger-api
     image: messenger.api
     build:
       context: .
-      dockerfile: Messenger.API/Dockerfile
+      dockerfile: src/Messenger.API/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      SQL_PASSWORD: ${SQL_PASSWORD}
+      SQL_USERNAME: ${SQL_USERNAME}
+      DB_NAME: ${DB_NAME}
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:8081;https://+:8080"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: "/https/${HTTPS_CERTIFICATE_FILENAME}"
+      ASPNETCORE_Kestrel__Certificates__Default__Password: ${HTTPS_CERTIFICATE_PASSWORD}
+    depends_on:
+      - messenger.db
+    networks:
+      - internal
+      - shared
+    volumes:
+      - "${PATH_TO_HTTPS_CERTIFICATE_FOLDER}:/https:ro"
 
+  messenger.db:
+    container_name: messenger-db
+    ports:
+      - "1433:1433"
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${SQL_PASSWORD}
+    networks:
+      - internal
