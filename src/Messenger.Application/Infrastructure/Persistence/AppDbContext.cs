@@ -6,17 +6,10 @@ namespace Messenger.Application.Infrastructure.Persistence;
 
 public sealed class AppDbContext : DbContext
 {
-    private string _connectionString { get; }
-
-    public AppDbContext(string connectionString) 
-    {
-        _connectionString = connectionString;
-    }
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(_connectionString);
-
         var databaseCreator = Database.GetService<IDatabaseCreator>() as IRelationalDatabaseCreator;
 
         if (databaseCreator == null) return;
