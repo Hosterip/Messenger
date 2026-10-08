@@ -6,8 +6,8 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["Messenger.API/Messenger.API.csproj", "Messenger.API/"]
+WORKDIR .
+COPY ["src/Messenger.API/Messenger.API.csproj", "Messenger.API/"]
 RUN dotnet restore "Messenger.API/Messenger.API.csproj"
 COPY . .
 WORKDIR "/src/Messenger.API"
