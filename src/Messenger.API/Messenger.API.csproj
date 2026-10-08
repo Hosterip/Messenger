@@ -13,13 +13,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Messenger.Application\Messenger.Application.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Messenger.Application\Messenger.Application.csproj" />
     </ItemGroup>
 
 </Project>
