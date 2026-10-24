@@ -3,13 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Messenger.Application;
 
-public static class MessengerSchemes
+public static class MessengerSchemas
 {
-    public static IServiceCollection AddMessengerScheme(this IServiceCollection services)
+    public static IServiceCollection AddMessengerSchemas(this IServiceCollection services)
     {
         services
             .AddGraphQLServer()
-            .AddUserScheme();
+            .AddUserSchemas();
 
         return services;
     }

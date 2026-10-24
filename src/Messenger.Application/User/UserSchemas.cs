@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Messenger.Application.User;
 
-internal static class UserSchemes
+internal static class UserSchemas
 {
-    internal static IRequestExecutorBuilder AddUserScheme(this IRequestExecutorBuilder services)
+    internal static IRequestExecutorBuilder AddUserSchemas(this IRequestExecutorBuilder services)
     {
         services
             .AddQueryType()

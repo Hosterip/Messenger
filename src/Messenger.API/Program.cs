@@ -11,7 +11,7 @@ ArgumentNullException.ThrowIfNull(sqlUsername);
 // Add services to the container.
 {
     builder.Services
-        .AddMessengerScheme()
+        .AddMessengerSchemas()
         .AddInfrastructure(dbName, sqlPassword, sqlUsername);
 }
 
