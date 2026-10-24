@@ -1,4 +1,4 @@
-﻿using Messenger.Application.User;
+﻿using Messenger.Application.Features;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Messenger.Application;

@@ -1,7 +1,7 @@
 ﻿using HotChocolate.Execution.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Messenger.Application.User;
+namespace Messenger.Application.Features;
 
 internal static class UserSchemas
 {
@@ -9,7 +9,7 @@ internal static class UserSchemas
     {
         services
             .AddQueryType()
-            .AddTypes(typeof(GetUserQuery));
+            .AddTypes(typeof(UserQuery));
         
         return services;
     }
