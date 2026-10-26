@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿namespace Messenger.Application.Infrastructure.Persistence;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-
-namespace Messenger.Application.Infrastructure.Persistence;
 
 public sealed class AppDbContext : DbContext
 {

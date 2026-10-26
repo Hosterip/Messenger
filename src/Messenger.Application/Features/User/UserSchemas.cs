@@ -1,7 +1,7 @@
-﻿using HotChocolate.Execution.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿namespace Messenger.Application.Features;
 
-namespace Messenger.Application.Features;
+using HotChocolate.Execution.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 internal static class UserSchemas
 {

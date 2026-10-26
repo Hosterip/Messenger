@@ -1,8 +1,8 @@
-﻿using Messenger.Application.Infrastructure.Persistence;
+﻿namespace Messenger.Application.Infrastructure;
+
+using Messenger.Application.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
-namespace Messenger.Application.Infrastructure;
 
 public static class DependencyInjection
 {

@@ -1,9 +1,9 @@
-﻿using System.Security.Cryptography;
+﻿namespace Messenger.Application.Domain;
+
+using System.Security.Cryptography;
 using ErrorOr;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Error = ErrorOr.Error;
-
-namespace Messenger.Application.Domain;
 
 public enum ActivityStatus
 {

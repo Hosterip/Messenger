@@ -1,7 +1,7 @@
-﻿using Messenger.Application.Features;
-using Microsoft.Extensions.DependencyInjection;
+﻿namespace Messenger.Application;
 
-namespace Messenger.Application;
+using Messenger.Application.Features;
+using Microsoft.Extensions.DependencyInjection;
 
 public static class MessengerSchemas
 {
