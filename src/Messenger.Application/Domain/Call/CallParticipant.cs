@@ -4,29 +4,31 @@ namespace Messenger.Application.Domain;
 
 public enum CallParticipantStatus
 {
-    None, 
+    None,
     Deafened,
-    Muted
+    Muted,
 }
 
 public sealed class CallParticipant
 {
+    private CallParticipant()
+    {
+    }
+
+    private CallParticipant(
+        User user,
+        CallParticipantStatus status)
+    {
+        this.Id = Guid.NewGuid();
+        this.User = user;
+        this.UserId = user.Id;
+        this.Status = status;
+    }
+
     public Guid Id { get; private init; }
     public Guid UserId { get; private init; }
     public User User { get; private init; }
     public CallParticipantStatus Status { get; private set; }
-    
-    private CallParticipant() {}
-
-    private CallParticipant(
-        User user, 
-        CallParticipantStatus status)
-    {
-        Id = Guid.NewGuid();
-        User = user;
-        UserId = user.Id;
-        Status = status;
-    }
 
     public static ErrorOr<CallParticipant> Create(
         in User user,
@@ -34,10 +36,10 @@ public sealed class CallParticipant
     {
         // Initializing CallParticipant
         var callParticipant = new CallParticipant(
-            user: user,
-            status: status);
-        
-        return callParticipant 
+            user,
+            status);
+
+        return callParticipant
             .ToErrorOr();
     }
 }

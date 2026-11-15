@@ -1,7 +1,7 @@
-﻿namespace Messenger.Application.Features;
-
-using ErrorOr;
+﻿using ErrorOr;
 using Messenger.Application.Domain;
+
+namespace Messenger.Application.Features;
 
 [QueryType]
 public static partial class UserQuery
