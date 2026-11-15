@@ -17,10 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <AdditionalFiles Include="..\..\stylecop.json"/>
-    </ItemGroup>
-    
-    <ItemGroup>
       <ProjectReference Include="..\Messenger.Application\Messenger.Application.csproj" />
     </ItemGroup>
     

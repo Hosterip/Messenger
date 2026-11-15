@@ -1,0 +1,10 @@
+root = true
+
+[*.cs]
+# Rule severities
+dotnet_diagnostic.SA1633.severity = none
+
+dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = none
+
+# Settings
+csharp_using_directive_placement = outside_namespace
